@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de Venta</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./JS/funciones.js"></script>
+    <script src="./JS/productos.js"></script>
+</head>
+
+<body>
+  <div>
+    <div class="título">
+      <h1> Don Carero </h1>
+      <h2> No es bueno pero es barato </h2>
+    </div>
+
+    <div class="container"> 
+      <table id="tabla">
+        <tr id="encabezado">
+          <th> Cantidad </th>
+          <th> Producto </th>
+          <th> Precio </th>
+          <th> Total </th>
+        </tr>
+        <tbody id="tbody1" style="border: none;">
+        </tbody>
+      </table>
+    </div>
+  </div>
+<input type="text" id="codigo" class="venta" onkeydown="buscarProductos(event)">
+    
+  <br>
+
+  <div class="flex-container">
+    <div class="ButtonCont">
+      <input type="button" value="" class="btn1" data-producto="Manzana" data-precio="2.00" style="background-image: url('./IMG/1.jpg'); background-position: center; background-size: cover;" onclick="agregarProducto('P001')">
+      <input type="button" value="" class="btn1" data-producto="Banana" data-precio="2.50" style="background-image: url('./IMG/2.jpg'); background-position: center; background-size: cover;" onclick="agregarProducto('P002')">
+      <input type="button" value="" class="btn1" data-producto="Naranja" data-precio="3.00" style="background-image: url('./IMG/3.jpg'); background-position: center; background-size: cover;" onclick="agregarProducto('P003')">
+      <input type="button" value="" class="btn1" data-producto="Pera" data-precio="3.50" style="background-image: url('./IMG/4.jpg'); background-position: center; background-size: cover;" onclick="agregarProducto('P004')">
+      <input type="button" value="" class="btn1" data-producto="Uvas" data-precio="4.00" style="background-image: url('./IMG/5.jpg'); background-position: center; background-size: cover;" onclick="agregarProducto('P005')">
+      <div class="container-btn">
+        <button class="btn-cerrar-venta" onclick="cerrarVenta()">Cerrar Venta</button>
+    </div>
+    <div class="total">
+        <h1 id="total">$0.00</h1>
+    </div>
+</div>
+</div>
+
+<div id="modal" class="modal">
+<div class="modal-content">
+    <span class="close" onclick="cerrarModal()">&times;</span>
+    <h2>Total: <span id="modal-total"></span></h2>
+    <label for="monto-recibido">Pago con:</label>
+    <input type="text" id="monto-recibido" oninput="calcularCambio()">
+    <h3>Su cambio es: <span id="cambio">$0.00</span></h3>
+    <button class="btn-cobrar" onclick="finalizarVenta()">Cobrar Venta</button>
+</div>
+</div>
+<script src="./js/funciones.js"></script>
+</body>
+</html>
